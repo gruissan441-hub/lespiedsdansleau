@@ -1,0 +1,41 @@
+
+/* === LIGHTBOX AMÉLIORÉE === */
+#lightbox.open {
+    display: flex;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    padding: 14px 18px;
+    font-size: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transition: background 0.2s ease, transform 0.1s ease;
+    user-select: none;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255,255,255,1);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.lightbox-btn.prev { left: 20px; }
+.lightbox-btn.next { right: 20px; }
+
+@media (max-width: 480px) {
+    .lightbox-btn {
+        padding: 16px 20px;
+        font-size: 28px;
+    }
+}
